@@ -1,0 +1,248 @@
+/* ------------------------------
+   GLOBAL STYLES
+------------------------------ */
+
+:root {
+  --bg1: #ffe6f2;
+  --bg2: #e6f0ff;
+  --card: #ffffffee;
+  --accent: #ff9ac4;
+  --accent2: #b39dff;
+  --text: #4b3b4f;
+  --soft: #fff7fb;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", system-ui, sans-serif;
+}
+
+body {
+  background: radial-gradient(circle at top, var(--bg1), var(--bg2));
+  color: var(--text);
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+/* ------------------------------
+   NAVIGATION BAR
+------------------------------ */
+
+.navbar {
+  width: 100%;
+  background: linear-gradient(to right, #ffe6f2ee, #e6f0ffee);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #ffd6ec;
+  padding: 10px 20px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  justify-content: center;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+.navbar a {
+  text-decoration: none;
+  color: #7a567f;
+  font-size: 0.9rem;
+  padding: 6px 14px;
+  border-radius: 999px;
+  transition: 0.2s;
+}
+
+.navbar a:hover {
+  background: #ffeaf6;
+}
+
+/* ------------------------------
+   WELCOME PAGE
+------------------------------ */
+
+.welcome-section {
+  padding: 60px 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.welcome-card {
+  background: var(--card);
+  padding: 40px 30px;
+  border-radius: 24px;
+  max-width: 700px;
+  text-align: center;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid #ffe0f0;
+}
+
+.pill {
+  display: inline-block;
+  padding: 6px 16px;
+  background: #ffeaf6;
+  color: #b34f7a;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  margin-bottom: 14px;
+}
+
+h1, h2, h3 {
+  font-family: "Dancing Script", "Segoe Script", cursive;
+  color: #3b2640;
+}
+
+h1 {
+  font-size: 2.4rem;
+  margin-bottom: 12px;
+}
+
+p {
+  line-height: 1.6;
+  margin-bottom: 12px;
+}
+
+/* ------------------------------
+   BUTTONS
+------------------------------ */
+
+.btn {
+  display: inline-block;
+  padding: 12px 28px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: white;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.18);
+  transition: 0.2s;
+  margin-top: 16px;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 30px rgba(0, 0, 0, 0.22);
+}
+
+/* ------------------------------
+   GENERIC CARD STYLES
+------------------------------ */
+
+.card {
+  background: var(--card);
+  padding: 30px 24px;
+  border-radius: 20px;
+  max-width: 900px;
+  margin: 40px auto;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.08);
+  border: 1px solid #ffe0f0;
+}
+
+.section-title {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.section-title p {
+  max-width: 520px;
+  margin: 6px auto 0;
+  font-size: 0.95rem;
+}
+
+/* ------------------------------
+   GRID LAYOUTS
+------------------------------ */
+
+.grid {
+  display: grid;
+  gap: 16px;
+}
+
+@media (min-width: 700px) {
+  .grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* ------------------------------
+   SPECIAL CARDS (Reasons, Flowers, Scrapbook, etc.)
+------------------------------ */
+
+.reason-card,
+.flower-card,
+.letter-card,
+.scrap-card,
+.quiz-card,
+.gift-card {
+  background: var(--soft);
+  padding: 16px;
+  border-radius: 18px;
+  border: 1px dashed #ffd0ea;
+}
+
+.reason-card span.num {
+  font-size: 0.8rem;
+  color: #c46a9a;
+  font-weight: 600;
+}
+
+/* Scrapbook tape effect */
+.scrap-card {
+  position: relative;
+  transform: rotate(-1.5deg);
+}
+
+.scrap-card:nth-child(2n) {
+  transform: rotate(1.5deg);
+}
+
+.scrap-tape {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%) rotate(-3deg);
+  width: 80px;
+  height: 22px;
+  background: #ffe9a8;
+  opacity: 0.8;
+  border-radius: 6px;
+}
+
+/* ------------------------------
+   QUIZ OPTIONS
+------------------------------ */
+
+.quiz-option {
+  margin-top: 6px;
+  padding: 8px 12px;
+  border-radius: 999px;
+  border: 1px solid #f3d4ff;
+  background: white;
+  cursor: pointer;
+  font-size: 0.85rem;
+}
+
+.quiz-option.correct {
+  background: #e4ffe9;
+  border-color: #8fd39f;
+}
+
+.quiz-option.wrong {
+  background: #ffe4e4;
+  border-color: #ff9b9b;
+}
+
+/* ------------------------------
+   FOOTER
+------------------------------ */
+
+.footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #8a6a8f;
+  margin-top: 40px;
+}
