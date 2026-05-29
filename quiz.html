@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Quiz – Kiye’s Birthday Garden</title>
+  <link rel="stylesheet" href="style.css">
+  <script>
+    function checkAnswer(question, selected) {
+      const options = document.querySelectorAll(`#q${question} .quiz-option`);
+      options.forEach(opt => opt.classList.remove("correct", "wrong"));
+
+      const correct = document.querySelector(`#q${question} .quiz-option[data-correct="true"]`);
+
+      if (selected.dataset.correct === "true") {
+        selected.classList.add("correct");
+      } else {
+        selected.classList.add("wrong");
+        correct.classList.add("correct");
+      }
+    }
+  </script>
+</head>
+
+<body>
+
+<nav class="navbar">
+  <a href="index.html">Welcome</a>
+  <a href="timeline.html">Timeline</a>
+  <a href="reasons.html">Reasons</a>
+  <a href="letters.html">Letters</a>
+  <a href="flowers.html">Flowers</a>
+  <a href="scrapbook.html">Scrapbook</a>
+  <a href="quiz.html">Quiz</a>
+  <a href="gifts.html">Gifts</a>
+  <a href="future.html">Future</a>
+</nav>
+
+<section class="card">
+  <div class="section-title">
+    <h2>The Best Friend Quiz</h2>
+    <p>Let’s see how well you know us. No pressure — it’s all love.</p>
+  </div>
+
+  <!-- QUESTION 1 -->
+  <div id="q1" class="quiz-card">
+    <h3>1. What was our first inside joke?</h3>
+
+    <div class="quiz-option" onclick="checkAnswer(1, this)" data-correct="false">
+      The one about the cat
+    </div>
+
+    <div class="quiz-option" onclick="checkAnswer(1, this)" data-correct="true">
+      The one about <em>[insert your real inside joke]</em>
+    </div>
+
+    <div class="quiz-option" onclick="checkAnswer(1, this)" data-correct="false">
+      The one about the teacher
+    </div>
+  </div>
+
+  <!-- QUESTION 2 -->
+  <div id="q2" class="quiz-card">
+    <h3>2. What’s something I always say?</h3>
+
+    <div class="quiz-option" onclick="checkAnswer(2, this)" data-correct="false">
+      “I’m so tired”
+    </div>
+
+    <div class="quiz-option" onclick="checkAnswer(2, this)" data-correct="true">
+      <em>[Insert your real phrase here]</em>
+    </div>
+
+    <div class="quiz-option" onclick="checkAnswer(2, this)" data-correct="false">
+      “Let’s order food”
+    </div>
+  </div>
+
+  <!-- QUESTION 3 -->
+  <div id="q3" class="quiz-card">
+    <h3>3. What’s my favourite thing about you?</h3>
+
+    <div class="quiz-option" onclick="checkAnswer(3, this)" data-correct="false">
+      Your fashion sense
+    </div>
+
+    <div class="quiz-option" onclick="checkAnswer(3, this)" data-correct="true">
+      The way you make everything feel lighter
+    </div>
+
+    <div class="quiz-option" onclick="checkAnswer(3, this)" data-correct="false">
+      Your handwriting
+    </div>
+  </div>
+
+  <p class="small-note" style="margin-top: 20px; text-align:center;">
+    (You can add more questions anytime — just copy a quiz-card.)
+  </p>
+</section>
+
+</body>
+</html>
